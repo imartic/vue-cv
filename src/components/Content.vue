@@ -6,7 +6,7 @@
         </md-card-header>
 
         <md-card-content>
-            ALkjfkj k jalkfjska jkas jlkafjwjfi 
+            <span>Text here</span>
         </md-card-content>
 
         <md-card-actions>
