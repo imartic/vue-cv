@@ -1,0 +1,40 @@
+<template>
+    <md-card>
+        <md-card-header>
+            <div class="md-title">{{title}}</div>
+        </md-card-header>
+
+        <md-card-content>
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+            culpa qui officia deserunt mollit anim id est laborum.</span>
+        </md-card-content>
+
+        <md-card-actions>
+
+        </md-card-actions>
+    </md-card>
+</template>
+
+<script>
+export default {
+  name: 'about',
+  data () {
+    return {
+      title: 'About me'
+    }
+  },
+  methods: {
+
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

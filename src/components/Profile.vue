@@ -1,69 +1,53 @@
 <template>
-  <div class="container">
-    <md-card class="profile-card">
-        <md-card-area md-inset>
-            <md-card-header>
-                <div class="md-title info-heading">Ivan Martić</div>
-                <div class="info-subheading">Software & Web Developer</div>
-            </md-card-header>
+  <v-card class="profile-card">
+    <div class="profile-header">
+      <div class="md-title info-heading">Ivan Martić</div>
+      <div class="info-subheading">Software & Web Developer</div>
+    </div>
 
-            <md-card-content>
-                <!-- CONTACT INFO -->
-                <div class="infos">
-                    <ul class="profile-list">
-                        <li>
-                            <span class="title"><md-icon>email</md-icon></span>
-                            <span class="content">ivan.martic.ri@gmail.com</span>
-                        </li>
-                        <li>
-                            <span class="title"><md-icon>language</md-icon></span>
-                            <span class="content">ivanmartic.com</span>
-                        </li>
-                        <li>
-                            <span class="title"><md-icon>phone</md-icon></span>
-                            <span class="content">+385 91 200 8778</span>
-                        </li>
-                        <li>
-                            <span class="title"><i class="fa fa-skype"></i></span>
-                            <span class="content">imartic14@skype.com</span>
-                        </li>
-                        <li>
-                            <span class="title"><i class="fa fa-linkedin"></i></span>
-                            <span class="content">imartic14@linkedin.com</span>
-                        </li>
-                    </ul>
-                </div>
-                <br>
-                <!--LINKS-->
-                <!--<div class="links">
-                    <md-button class="md-fab md-primary md-mini">
-                        <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-                    </md-button>
-                </div>-->
-            </md-card-content>
-        </md-card-area>
-        
+    <div class="infos">
+      <ul class="profile-list">
+        <li>
+            <span class="title"><v-icon>email</v-icon></span>
+            <span>ivan.martic.ri@gmail.com</span>
+        </li>
+        <li>
+            <span class="title"><v-icon>language</v-icon></span>
+            <span>ivanmartic.com</span>
+        </li>
+        <li>
+            <span class="title"><v-icon>phone</v-icon></span>
+            <span>+385 91 200 8778</span>
+        </li>
+        <li>
+            <span class="title"><i class="fa fa-skype"></i></span>
+            <span>imartic14@skype.com</span>
+        </li>
+        <li>
+            <span class="title"><i class="fa fa-linkedin"></i></span>
+            <span>imartic14@linkedin.com</span>
+        </li>
+      </ul>
+    </div>
 
-        <div class="profile-nav">
-            <md-button>
-                <md-icon>person</md-icon>
-                <md-tooltip md-direction="bottom" class="nav-tooltip">About me</md-tooltip>
-            </md-button>
-            <md-button>
-                <md-icon>description</md-icon>
-                <md-tooltip md-direction="bottom" class="nav-tooltip">Curriculum Vitae</md-tooltip>
-            </md-button>
-            <md-button>
-                <md-icon>work</md-icon>
-                <md-tooltip md-direction="bottom" class="nav-tooltip">Portfolio</md-tooltip>
-            </md-button>
-            <md-button>
-                <md-icon>mail</md-icon>
-                <md-tooltip md-direction="bottom" class="nav-tooltip">Contact me</md-tooltip>
-            </md-button>
-        </div>
-    </md-card>
-  </div>
+    <div class="profile-menu">
+      <router-link to="/about">
+        <v-btn dark flat v-tooltip:bottom="{ html: 'About me' }">
+          <v-icon>person</v-icon>
+        </v-btn>
+      </router-link>
+      <!--<v-btn dark flat v-tooltip:bottom="{ html: 'Curriculum Vitae' }">
+        <v-icon>description</v-icon>
+      </v-btn>-->
+      <v-btn dark flat v-tooltip:bottom="{ html: 'Portfolio' }">
+        <v-icon>work</v-icon>
+      </v-btn>
+      <v-btn dark flat v-tooltip:bottom="{ html: 'Contact me' }">
+        <v-icon>mail</v-icon>
+      </v-btn>
+    </div>
+
+  </v-card>
 </template>
 
 <script>
@@ -82,24 +66,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.profile-card{background-color:#156 !important;color:white;text-align:center;max-width:600px;min-width:230px;}
+.profile-card{background-color:#156 !important;color:white;text-align:center;}
 .profile-card .responsive-img{max-height:220px; margin-top:-105px;/*border:10px solid #156*/}
 
-@media (max-width:670px){.profile-card{width:100% !important;margin-left:auto !important;margin-right:auto !important}
-}
+.profile-header{padding:35px 35px 19px 35px;}
 
-.info-heading{font-size:26pt;font-weight:400;color:#fff;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29);margin-top:10px;}
-.info-subheading{font-weight:300;margin-bottom:10px;font-size:11pt;color:#ccc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29);}
-    
+.info-heading{font-size:26pt;font-weight:500;color:#fff;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
+.info-subheading{font-weight:400;font-size:11pt;color:#ccc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
+
+.infos{padding:20px 0 55px 0}
 .profile-list{list-style-type: none;padding:0}
-.profile-list .title{color:#fff;display:inline-flex;vertical-align:middle;padding-bottom:5px}
+.profile-list .title{color:#fff;display:inline-flex;vertical-align:middle;padding-bottom:4px}
 .profile-list .title i{font-size:23px;padding-right:5px}
 .profile-list .title .fa{padding-left:2px;}
 .profile-list .content{font-size:15px;font-weight:300;line-height:20px;color:#fff;}
-/*.links .social{color:white}
-.links .social:hover{color:white}
-.links .social i{font-size:20px;vertical-align:middle}*/
+i{font-size:23px;padding-right:5px}
+.fa{padding-left:3px;}
 
-.profile-nav{}
-.nav-tooltip{font-size:10pt;font-weight:300;background-color:#145;}
+.profile-menu{border-top:1px solid rgba(150,175,185,.4)}
 </style>
