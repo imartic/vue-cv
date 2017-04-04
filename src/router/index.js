@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
@@ -10,13 +8,14 @@ import About from '@/components/About'
 import Contact from '@/components/Contact'
 
 Vue.use(Router)
-Vue.use(VueMaterial)
 Vue.use(Vuetify)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
+    { path: '/', name: 'About', component: About },
     { path: '/about', name: 'About', component: About },
-    { path: '/contact', name: 'Contact', component: Contact }
+    { path: '/contact', name: 'Contact', component: Contact },
   ]
 })
+export default router

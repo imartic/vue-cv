@@ -6,26 +6,11 @@
     </div>
 
     <div class="infos">
-      <ul class="profile-list">
+      <ul class="profile-list" v-for="item in profileList">
         <li>
-            <span class="title"><v-icon>email</v-icon></span>
-            <span>ivan.martic.ri@gmail.com</span>
-        </li>
-        <li>
-            <span class="title"><v-icon>language</v-icon></span>
-            <span>ivanmartic.com</span>
-        </li>
-        <li>
-            <span class="title"><v-icon>phone</v-icon></span>
-            <span>+385 91 200 8778</span>
-        </li>
-        <li>
-            <span class="title"><i class="fa fa-skype"></i></span>
-            <span>imartic14@skype.com</span>
-        </li>
-        <li>
-            <span class="title"><i class="fa fa-linkedin"></i></span>
-            <span>imartic14@linkedin.com</span>
+            <span class="title" v-if="item.fa == ''"><v-icon>{{item.icon}}</v-icon></span>
+            <span class="title" v-else><i :class="item.icon"></i></span>
+            <span class="text">{{item.text}}</span>
         </li>
       </ul>
     </div>
@@ -47,6 +32,13 @@ export default {
   data () {
     return {
       title: 'VUE',
+      profileList:[
+        {text:'ivan.martic.ri@gmaail.com', icon:'mail', fa:''}, //fa:'' or null (no fa)..
+        {text:'ivanmartic.com', icon:'language', fa:''},
+        {text:'+385 91 200 8778', icon:'phone', fa:''},
+        {text:'imartic14@skype.com', icon:'fa fa-skype', fa:'sykpe'},
+        {text:'linkedin.com/ivanmartic', icon:'fa fa-linkedin', fa:'linkedin'}
+      ],
       links:[
         {path:'/about', text:'About me', icon:'person'},
         {path:'/portfolio', text:'Portfolio', icon:'work'},
@@ -68,16 +60,27 @@ export default {
 .profile-header{padding:35px 35px 19px 35px;}
 
 .info-heading{font-size:26pt;font-weight:500;color:#fff;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
-.info-subheading{font-weight:400;font-size:11pt;color:#ccc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
+.info-subheading{font-weight:400;font-size:12pt;color:#ccc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29);margin-top:-10px}
 
-.infos{padding:20px 0 55px 0}
+.infos{padding:20px 0 50px 0}
 .profile-list{list-style-type: none;padding:0}
+.profile-list li{padding-bottom:8px}
 .profile-list .title{color:#fff;display:inline-flex;vertical-align:middle;padding-bottom:4px}
 .profile-list .title i{font-size:23px;padding-right:5px}
 .profile-list .title .fa{padding-left:2px;}
-.profile-list .content{font-size:15px;font-weight:300;line-height:20px;color:#fff;}
+.profile-list .text{font-size:16px;font-weight:400;line-height:20px;color:#fff;}
 i{font-size:23px;padding-right:5px}
 .fa{padding-left:3px;}
 
 .profile-menu{border-top:1px solid rgba(150,175,185,.4)}
+
+.router-link-active > button i{
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color:#156;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
 </style>
