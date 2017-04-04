@@ -7,6 +7,7 @@ import 'vuetify/dist/vuetify.min.css'
 
 import App from '@/App'
 import About from '@/components/About'
+import Contact from '@/components/Contact'
 
 Vue.use(Router)
 Vue.use(VueMaterial)
@@ -15,6 +16,7 @@ Vue.use(Vuetify)
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/about', name: 'About', component: About }
+    { path: '/about', name: 'About', component: About },
+    { path: '/contact', name: 'Contact', component: Contact }
   ]
 })

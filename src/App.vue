@@ -5,13 +5,11 @@
 
           <v-container fluid="fluid">
             <v-row>
-              <v-col xs12 sm6 md5 lg4>
+              <v-col xs12 sm12 md5 lg4>
                 <Profile></Profile>
               </v-col>
-              <v-col xs12 sm6 md7 lg8>
-                <v-card>
-                  <router-view></router-view>
-                </v-card>
+              <v-col xs12 sm12 md7 lg8>
+                <router-view></router-view>
               </v-col>
             </v-row>
           </v-container>
@@ -40,8 +38,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
   .toggle-btn{
     padding-top:55px;
     padding-left:35px;
@@ -62,7 +59,7 @@ export default {
     transition: all .4s cubic-bezier(.25,.8,.25,1);
     transition-delay: .2s;
   }
-  @media (max-width:700px){
+  @media (max-width:600px){
     .main-content{
       padding-left:10px !important;padding-right:10px !important
     }
@@ -71,5 +68,9 @@ export default {
     .main-content{
       padding-left:300px !important;padding-right:300px !important
     }
+  }
+
+  .card{
+    margin-bottom:16px
   }
 </style>

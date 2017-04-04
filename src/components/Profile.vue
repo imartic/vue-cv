@@ -31,20 +31,11 @@
     </div>
 
     <div class="profile-menu">
-      <router-link to="/about">
-        <v-btn dark flat v-tooltip:bottom="{ html: 'About me' }">
-          <v-icon>person</v-icon>
+      <router-link v-for="item in links" :to="item.path">
+        <v-btn dark flat v-tooltip:bottom="{ html: item.text }">
+          <v-icon>{{item.icon}}</v-icon>
         </v-btn>
       </router-link>
-      <!--<v-btn dark flat v-tooltip:bottom="{ html: 'Curriculum Vitae' }">
-        <v-icon>description</v-icon>
-      </v-btn>-->
-      <v-btn dark flat v-tooltip:bottom="{ html: 'Portfolio' }">
-        <v-icon>work</v-icon>
-      </v-btn>
-      <v-btn dark flat v-tooltip:bottom="{ html: 'Contact me' }">
-        <v-icon>mail</v-icon>
-      </v-btn>
     </div>
 
   </v-card>
@@ -55,7 +46,12 @@ export default {
   name: 'profile',
   data () {
     return {
-      title: 'VUE'
+      title: 'VUE',
+      links:[
+        {path:'/about', text:'About me', icon:'person'},
+        {path:'/portfolio', text:'Portfolio', icon:'work'},
+        {path:'/contact', text:'Contact me', icon:'mail'}
+      ]
     }
   },
   methods: {
