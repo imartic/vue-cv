@@ -22,7 +22,7 @@
         </router-link>
       </v-list>
 
-      <div class="menu-footer text-xs-center" style="color: #cccc">
+      <div class="menu-footer text-xs-center">
         Copyright &copy; {{getCurrentYear()}}. Ivan Martić
       </div>
     </v-sidebar>
@@ -92,6 +92,7 @@ export default {
     padding:10px 5px 0 0;
   }
   .menu-footer{
+    color:#cccc;
     position: absolute;
     bottom: 30px;
     width: 100%;
