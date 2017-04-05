@@ -33,7 +33,7 @@ export default {
     return {
       title: 'VUE',
       profileList:[
-        {text:'ivan.martic.ri@gmaail.com', icon:'mail', fa:''}, //fa:'' or null (no fa)..
+        {text:'ivan.martic.ri@gmail.com', icon:'mail', fa:''}, //fa:'' or null (no fa)..
         {text:'ivanmartic.com', icon:'language', fa:''},
         {text:'+385 91 200 8778', icon:'phone', fa:''},
         {text:'imartic14@skype.com', icon:'fa fa-skype', fa:'sykpe'},
@@ -77,10 +77,10 @@ i{font-size:23px;padding-right:5px}
 .router-link-active > button i{
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   color:#156;
-  -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
-  -ms-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
-  transition: color 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 </style>

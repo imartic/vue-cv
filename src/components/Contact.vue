@@ -2,8 +2,7 @@
     <div>
         <v-card>
             <v-card-title>
-                <v-card-row img="/assets/contactme.jpg" height="100px">
-                    {{title}}
+                <v-card-row :img="contactMe" height="200px">
                 </v-card-row>
             </v-card-title>
 
@@ -23,6 +22,10 @@
                         <!--<v-text-field name="subject" label="Subject *"></v-text-field>-->
                         <v-text-field name="message" label="Message *" multi-line>
                         </v-text-field>
+
+                        <span style="color:rgba(0,0,0,.38)">
+                            * required fileds
+                        </span>
                     </v-container>
                 </v-content>
             </v-card-text>
@@ -40,11 +43,14 @@
 </template>
 
 <script>
+const contact_img = require('@/assets/contactme.jpg');
+
 export default {
   name: 'contact',
   data () {
     return {
-      title: 'Contact me'
+      title: 'Contact me',
+      contactMe: contact_img
     }
   },
   methods: {
@@ -53,13 +59,7 @@ export default {
 }
 </script>
 
-<style>
-.send{color:#156}
-
-.input-group--text-field.input-group--focused label{
-     color: #156 !important;
-}
-.input-group__details:after{
-    background-color: #156;
-}
+<style scoped>
+    .card__title{padding:0;margin-bottom:15px}
+    .send{color:#156}
 </style>

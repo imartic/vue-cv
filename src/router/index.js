@@ -13,7 +13,7 @@ Vue.use(Vuetify)
 const router = new Router({
   mode: 'history',
   routes: [
-    { path: '/', name: 'About', component: About },
+    { path: '/', name: 'About', component: About, redirect:'/about' },
     { path: '/about', name: 'About', component: About },
     { path: '/contact', name: 'Contact', component: Contact },
   ]

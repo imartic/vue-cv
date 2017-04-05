@@ -117,4 +117,11 @@ export default {
   .card{
     margin-bottom:16px
   }
+
+  .input-group--text-field.input-group--focused label{
+    color: #156 !important;
+  }
+  .input-group__details:after{
+    background-color: #156 !important;
+  }
 </style>
