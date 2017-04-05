@@ -14,10 +14,6 @@
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
                 culpa qui officia deserunt mollit anim id est laborum.</span>
             </v-card-text>
-
-            <v-card-actions>
-
-            </v-card-actions>
         </v-card>
 
         <Experience></Experience>
