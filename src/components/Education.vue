@@ -36,7 +36,7 @@ export default {
         {
             title:'Polytechnic of Rijeka - Croatia',
             logo:'', 
-            degree:'Bachelor of Engineering (Telematics)',
+            degree:'Bachelor of Engineering, Telematics',
             time:'October 2012 - March 2017',
             text:'Bachelor degree in Telematics.' +
                 '<br/>University website: <a href="https://www.veleri.hr/">https://www.veleri.hr</a>'

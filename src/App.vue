@@ -1,6 +1,7 @@
 <template>
   <v-app id="cv">
     <v-toolbar-side-icon class="toggle-btn" @click.native.stop="sidebar = !sidebar"/>
+    <div class="in-progress">still in progress...</div>
 
     <v-sidebar drawer v-model="sidebar">
       <v-toolbar style="background-color:#156">
@@ -33,11 +34,31 @@
           <v-container fluid="fluid">
             <v-row>
               <v-col xs12 sm12 md5 lg4>
-                <Profile></Profile>
-                <v-btn flat block>
-                  <v-icon left>file_download</v-icon>
-                  Download CV
-                </v-btn>
+                <Profile></Profile>            
+
+                <!-- modal -->
+                <v-modal v-model="modal" class="cv-modal">
+
+                  <v-btn flat block slot="activator">
+                    <v-icon left>file_download</v-icon>
+                    Download CV
+                  </v-btn>
+
+                  <v-card class="cv-modal-card">
+                    <v-card-text>
+                      <h2 class="title">Download CV</h2>
+                    </v-card-text>
+                    <v-card-text class="subheading grey--text">Choose language of CV.</v-card-text>
+                    <v-card-row actions>
+                      <v-spacer></v-spacer>
+                      <v-btn flat v-on:click.native="modal = false" class="primary--text">Cancel</v-btn>
+                      <v-btn flat v-on:click.native="modal = false" class="primary--text">Download</v-btn>
+                    </v-card-row>
+                  </v-card>
+
+                </v-modal>
+                <!-- modal -->
+
                 <br/>
               </v-col>
               <v-col xs12 sm12 md7 lg8>
@@ -61,6 +82,7 @@ export default {
     return {
       title: 'VUE',
       sidebar: false,
+      modal: false,
       menu:[
         {path:'/about', text:'About me', icon:'person'},
         {path:'/portfolio', text:'Portfolio', icon:'work'},
@@ -81,8 +103,17 @@ export default {
 </script>
 
 <style>
+  /***** remove ******/
+  .in-progress{
+    position:absolute;
+    top:16px;
+    right:16px;
+    color:#156c;
+  }
+  /*******************/
+
   #cv{
-    background-color:#f2f2f2
+    background-color:#f1f2f5
   }
   a{
     text-decoration:none;
@@ -115,8 +146,12 @@ export default {
     }
   }
 
-  .card{
+  .card:not(.cv-modal-card){
     margin-bottom:16px
+  }
+
+  .cv-modal, .modal__activator{
+    width:100%;
   }
 
   .input-group--text-field.input-group--focused label{
