@@ -17,7 +17,7 @@
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title v-text="item.text" />
+              <v-list-tile-title v-text="item.text" style="font-weight:400"/>
             </v-list-tile-content>
           </v-list-tile>
         </router-link>
@@ -46,13 +46,17 @@
 
                   <v-card class="cv-modal-card">
                     <v-card-text>
-                      <h2 class="title">Download CV</h2>
+                      <h2 class="title">Choose language of CV</h2>
                     </v-card-text>
-                    <v-card-text class="subheading grey--text">Choose language of CV.</v-card-text>
+                    <v-card-text>
+                      <v-radio v-for="item in cv_langs" 
+                        v-model="cv_lang" 
+                        :label="item.text" 
+                        :value="item.value" 
+                        class="radio-cv-lang"/>
+                    </v-card-text>
                     <v-card-row actions>
-                      <v-spacer></v-spacer>
-                      <v-btn flat v-on:click.native="modal = false" class="primary--text">Cancel</v-btn>
-                      <v-btn flat v-on:click.native="modal = false" class="primary--text">Download</v-btn>
+                      <v-btn flat block v-on:click.native="modal = false" class="prim-col">Download</v-btn>
                     </v-card-row>
                   </v-card>
 
@@ -86,9 +90,14 @@ export default {
       menu:[
         {path:'/about', text:'About me', icon:'person'},
         {path:'/portfolio', text:'Portfolio', icon:'work'},
-        {path:'/contact', text:'Contact me', icon:'mail'},
-        {path:'', text:'Download CV', icon:'file_download'}
-      ]
+        {path:'/contact', text:'Contact me', icon:'mail'}
+      ],
+      cv_langs:[
+        {text:'English', value:'en'},
+        {text:'German', value:'de'},
+        {text:'Croatian', value:'hr'},
+      ],
+      cv_lang:'en'
     }
   },
   methods: {
@@ -123,7 +132,8 @@ export default {
     padding:10px 5px 0 0;
   }
   .menu-footer{
-    color:#cccc;
+    color:#999;
+    font-weight:300;
     position: absolute;
     bottom: 30px;
     width: 100%;
@@ -131,7 +141,7 @@ export default {
   .main-content {
     padding: 10px 55px 16px 55px;
     background-color:inherit !important;
-    transform: translate3D(0,0,0);
+    /*transform: translate3D(0,0,0);*/ /* removed bc of modal */
     transition: all .4s cubic-bezier(.25,.8,.25,1);
     transition-delay: .2s;
   }
@@ -146,12 +156,21 @@ export default {
     }
   }
 
+  .prim-col{
+    color:#156 !important;
+  }
+
   .card:not(.cv-modal-card){
     margin-bottom:16px
   }
 
   .cv-modal, .modal__activator{
     width:100%;
+  }
+
+  .radio-cv-lang{
+    margin:0 !important;
+    color:#156;
   }
 
   .input-group--text-field.input-group--focused label{
