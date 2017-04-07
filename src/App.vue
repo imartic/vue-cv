@@ -56,7 +56,7 @@
                         class="radio-cv-lang"/>
                     </v-card-text>
                     <v-card-row actions>
-                      <v-btn flat block v-on:click.native="modal = false" class="prim-col">Download</v-btn>
+                      <v-btn flat block @click.native="downloadCV()" class="prim-col">Download</v-btn>
                     </v-card-row>
                   </v-card>
 
@@ -84,7 +84,7 @@ export default {
   name: 'app',
   data () {
     return {
-      title: 'VUE',
+      title: 'CV/Portfolio',
       sidebar: false,
       modal: false,
       menu:[
@@ -103,6 +103,10 @@ export default {
   methods: {
     getCurrentYear: function(){
       return new Date().getFullYear();
+    },
+    downloadCV: function(){
+      this.modal = false;
+      alert("CV's will be available shortly!");
     }
   },
   components:{

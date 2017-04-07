@@ -11,16 +11,16 @@
                     <v-container fluid>
                         <v-row>
                             <v-col xs12 sm12 md12 lg6>
-                                <v-text-field name="name" label="Name">
+                                <v-text-field id="name" label="Name">
                                 </v-text-field>
                             </v-col>
                             <v-col xs12 sm12 md12 lg6>
-                                <v-text-field name="email" label="E-mail *">
+                                <v-text-field id="email" label="E-mail *">
                                 </v-text-field>
                             </v-col>
                         </v-row>
                         <!--<v-text-field name="subject" label="Subject *"></v-text-field>-->
-                        <v-text-field name="message" label="Message *" multi-line>
+                        <v-text-field name="message" label="Message *" v-model="message" multi-line>
                         </v-text-field>
 
                         <span style="color:rgba(0,0,0,.38)">
@@ -30,14 +30,13 @@
                 </v-content>
             </v-card-text>
 
-            <v-card-actions>
                 <v-card-row actions>
-                    <v-btn block flat class="send">
+                    <v-btn block flat class="send"
+                        @click.native="sendMail">
                         Send
                         <v-icon right>send</v-icon>
                     </v-btn>
                 </v-card-row>
-            </v-card-actions>
         </v-card>
     </div>
 </template>
@@ -50,11 +49,20 @@ export default {
   data () {
     return {
       title: 'Contact me',
-      contactMe: contact_img
+      contactMe: contact_img,
+      message:''
     }
   },
   methods: {
+    sendMail: function () {
+        if(confirm('Send mail using your default E-mail application?')){
+            var link = "mailto:ivan.martic.ri@gmail.com"
+                + "?subject=" + escape("Hello!")
+                + "&body=" + escape(this.message);
 
+            window.location.href = link;
+        }
+    },
   }
 }
 </script>

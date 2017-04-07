@@ -8,8 +8,8 @@
     <div class="infos">
       <ul class="profile-list" v-for="item in profileList">
         <li>
-          <a v-if="item.link !== ''" :href="item.link">
-            <span class="title" v-if="item.fa == ''"><v-icon>{{item.icon}}</v-icon></span>
+          <a v-if="item.link !== null" :href="item.link">
+            <span class="title" v-if="item.fa == null"><v-icon>{{item.icon}}</v-icon></span>
             <span class="title" v-else><i :class="item.icon"></i></span>
             <span class="text">{{item.text}}</span>
           </a>
@@ -35,9 +35,9 @@ export default {
     return {
       title: 'VUE',
       profileList:[
-        {text:'ivan.martic.ri@gmail.com', icon:'mail', fa:''}, //fa:'' or null (no fa)..
-        {text:'imartic.github.io', icon:'language', fa:''},
-        {text:'+385 91 200 8778', icon:'phone', fa:''},
+        {text:'ivan.martic.ri@gmail.com', icon:'mail', link:'mailto:ivan.martic.ri@gmail.com?Subject=Hello!'}, //fa:'' or null (no fa)..
+        {text:'imartic.github.io', icon:'language', link:'https://imartic.github.io'},
+        {text:'+385 91 200 8778', icon:'phone'},
         {text:'imartic14', icon:'fa fa-skype', fa:'sykpe'},
         {text:'LinkedIn profile', icon:'fa fa-linkedin', fa:'linkedin', link:'https://www.linkedin.com/in/ivan-martić-81b7a9a5'},
         {text:'GitHub profile', icon:'fa fa-github', fa:'github', link:'https://www.github.com/imartic'}

@@ -5,6 +5,7 @@ import 'vuetify/dist/vuetify.min.css'
 
 import App from '@/App'
 import About from '@/components/About'
+import Portfolio from '@/components/Portfolio'
 import Contact from '@/components/Contact'
 
 Vue.use(Router)
@@ -13,8 +14,14 @@ Vue.use(Vuetify)
 const router = new Router({
   routes: [
     { path: '/', name: 'About', component: About, redirect:'/about' },
-    { path: '/about', name: 'About', component: About },
-    { path: '/contact', name: 'Contact', component: Contact },
+    { path: '/about', name: 'About', component: About, meta:{title:'IM'} },
+    { path: '/portfolio', name: 'Portfolio', component: Portfolio, meta:{title:'Portfolio | IM'} },
+    { path: '/contact', name: 'Contact', component: Contact, meta:{title:'Contact me | IM'} },
   ]
 })
+
+router.afterEach(route => {
+	document.title = route.meta.title;
+})
+
 export default router
