@@ -4,7 +4,7 @@
     <div class="in-progress">still in progress...</div>
 
     <v-sidebar drawer v-model="sidebar">
-      <v-toolbar style="background-color:#156">
+      <v-toolbar style="background-color:#146">
         <v-btn icon="icon" @click.native.stop="sidebar = !sidebar">
             <v-icon>close</v-icon>
           </v-btn>
@@ -39,7 +39,7 @@
                 <!-- modal -->
                 <v-modal v-model="modal" class="cv-modal">
 
-                  <v-btn flat block slot="activator">
+                  <v-btn flat block slot="activator" class="download-btn ">
                     <v-icon left>file_download</v-icon>
                     Download CV
                   </v-btn>
@@ -119,20 +119,20 @@ export default {
   /***** remove ******/
   .in-progress{
     position:absolute;
-    top:16px;
+    top:19px;
     right:16px;
-    color:#156c;
+    color:#777;
   }
   /*******************/
 
   #cv{
-    background-color:#f1f2f5
+    background-color:#eeeff1
   }
   a{
     text-decoration:none;
   }
   .toggle-btn i{
-    color:#156;
+    color:#146;
     padding:10px 5px 0 0;
   }
   .menu-footer{
@@ -149,23 +149,27 @@ export default {
     transition: all .4s cubic-bezier(.25,.8,.25,1);
     transition-delay: .2s;
   }
-  @media (max-width:600px){
+  @media (max-width:1090px){
     .main-content{
       padding-left:10px !important;padding-right:10px !important
     }
   }
-  @media (min-width:1500px){
+  @media (min-width:1600px){
     .main-content{
       padding-left:300px !important;padding-right:300px !important
     }
   }
 
   .prim-col{
-    color:#156 !important;
+    color:#146 !important;
+  }
+
+  .download-btn{
+    margin-bottom:16px !important;
   }
 
   .card:not(.cv-modal-card){
-    margin-bottom:16px
+    margin-bottom:16px;
   }
 
   .cv-modal, .modal__activator{
@@ -174,13 +178,13 @@ export default {
 
   .radio-cv-lang{
     margin:0 !important;
-    color:#156;
+    color:#146;
   }
 
   .input-group--text-field.input-group--focused label{
-    color: #156 !important;
+    color: #146 !important;
   }
   .input-group__details:after{
-    background-color: #156 !important;
+    background-color: #146 !important;
   }
 </style>

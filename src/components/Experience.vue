@@ -5,21 +5,21 @@
         </v-card-title>
 
         <v-card-text>
-            <ul class="exp-list">
-                <li class="exp-list-item" v-for="(item, index) in work" 
-                :class="{notlast : index !== (work.length-1)}">
+            <ul class="about-list">
+                <li class="about-list-item" v-for="(item, index) in work">
                     <v-row>
-                        <div class="exp-logo">
+                        <div class="about-logo">
                             <img :src="item.logo" height="70" width="70">
                         </div>
-                        <div class="exp-header">
-                            <div class="exp-title">{{item.title}}</div>
-                            <div class="exp-pos">{{item.pos}}</div>
-                            <div class="exp-time">{{item.time}}</div>
+                        <div class="about-header">
+                            <div class="about-pos">{{item.pos}}</div>
+                            <div class="about-title">{{item.title}}</div>
+                            <div class="about-time">{{item.time}}</div>
                         </div>
                     </v-row>
-                    <v-divider></v-divider>
-                    <div class="exp-text" v-html="item.text"></div>
+                    
+                    <div class="about-text" v-html="item.text"></div>
+                    <v-divider v-if="index !== (work.length-1)"></v-divider>
                 </li>
             </ul>
         </v-card-text>
@@ -41,16 +41,16 @@ export default {
             title:'Alarm automatika d.o.o.',
             logo:aa_logo, 
             pos:'Software Developer',
-            time:'November 2016 - present',
+            time:'Nov 2016 - Present',
             text:'Working as Software Developer in Research & Development department at Alarm automatika d.o.o.' +
                 '<br/>Company website: <a href="https://www.alarmautomatika.com/en">https://www.alarmautomatika.com</a>'
         },
         {
             title:'Impuls ing d.o.o.',
             logo:impuls_logo, 
-            pos:'Junior Software Developer',
-            time:'November 2015 - July 2016',
-            text:'Worked as Junior Software Developer at Impuls ing d.o.o. ' +
+            pos:'Software Developer',
+            time:'Nov 2015 - Jul 2016',
+            text:'Worked as Software Developer at Impuls ing d.o.o. ' +
                 'Responsible for the development of a module for an existing desktop application. ' +
                 '' +
                 '<br/>Product website: <a href="http://www.integracert.com">http://www.integracert.com</a>'
@@ -64,13 +64,12 @@ export default {
 }
 </script>
 
-<style scoped>
-    .exp-list{list-style-type:none;padding:0;margin-top:7px}
-    .notlast{margin-bottom:50px}
-    .exp-logo{padding-left:7px;padding-right:10px}
-    .exp-header{margin-bottom:15px;padding-left:7px}
-    .exp-title{font-size:18px;font-weight:500;color:#424242;}
-    .exp-pos{font-size:15px;font-weight:500;color:#333b}
-    .exp-time{font-weight:400;color:#333b}
-    .exp-text{padding-top:10px}
+<style>
+    .about-list{list-style-type:none;padding:0;margin-top:7px}
+    .about-logo{padding:4px 10px 0 7px}
+    .about-header{margin-bottom:15px;padding-left:7px}
+    .divider{margin-top:28px;margin-bottom:28px}
+    .about-pos{font-size:20px;font-weight:400}
+    .about-title{font-size:15px;font-weight:500;color:#333;margin-right:10px}
+    .about-time{padding-top:2px;font-weight:400;color:#333}
 </style>

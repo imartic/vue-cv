@@ -35,7 +35,7 @@ export default {
     return {
       title: 'VUE',
       profileList:[
-        {text:'ivan.martic.ri@gmail.com', icon:'mail', link:'mailto:ivan.martic.ri@gmail.com?Subject=Hello!'}, //fa:'' or null (no fa)..
+        {text:'ivan.martic.ri@gmail.com', icon:'mail', link:'mailto:ivan.martic.ri@gmail.com?Subject=Hello!'},
         {text:'imartic.github.io', icon:'language', link:'https://imartic.github.io'},
         {text:'+385 91 200 8778', icon:'phone'},
         {text:'imartic14', icon:'fa fa-skype', fa:'sykpe'},
@@ -55,15 +55,14 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.profile-card{background-color:#156 !important;color:white;text-align:center;}
+.profile-card{background-color:#146 !important;color:white;text-align:center;}
 .profile-card .responsive-img{max-height:220px; margin-top:-105px;/*border:10px solid #156*/}
 
 .profile-header{padding:35px 35px 19px 35px;}
 
-.info-heading{font-size:26pt;font-weight:500;color:#fff;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
-.info-subheading{font-weight:400;font-size:12pt;color:#ccc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29);margin-top:-10px}
+.info-heading{font-size:37px;font-weight:500;color:#fff;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29)}
+.info-subheading{font-weight:400;font-size:16px;color:#d2d2d2;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.29);margin-top:-10px}
 
 .infos{padding:20px 0 50px 0}
 .profile-list{list-style-type: none;padding:0}
@@ -79,7 +78,7 @@ i{font-size:23px;padding-right:5px}
 
 .router-link-active > button i{
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-  color:#156;
+  color:#146;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
