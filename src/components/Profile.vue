@@ -1,5 +1,8 @@
 <template>
   <v-card class="profile-card">
+
+    <img :src="profilePic">
+
     <div class="profile-header">
       <div class="md-title info-heading">Ivan Martić</div>
       <div class="info-subheading">Software & Web Developer</div>
@@ -29,11 +32,13 @@
 </template>
 
 <script>
+const me = require('@/assets/me.jpg');
+
 export default {
   name: 'profile',
   data () {
     return {
-      title: 'VUE',
+      profilePic: me,
       profileList:[
         {text:'ivan.martic.ri@gmail.com', icon:'mail', link:'mailto:ivan.martic.ri@gmail.com?Subject=Hello!'},
         {text:'imartic.github.io', icon:'language', link:'https://imartic.github.io'},
@@ -56,8 +61,9 @@ export default {
 </script>
 
 <style scoped>
-.profile-card{background-color:#146 !important;color:white;text-align:center;}
-.profile-card .responsive-img{max-height:220px; margin-top:-105px;/*border:10px solid #156*/}
+.profile-card{margin-top:67px;background-color:#146 !important;color:white;text-align:center;}
+
+.profile-card img{margin-top:-67px;width:135px;height:135px;border-radius:50%;box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 2px 10px 0 rgba(0, 0, 0, 0.14);}
 
 .profile-header{padding:35px 35px 19px 35px;}
 
