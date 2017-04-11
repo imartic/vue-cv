@@ -8,10 +8,9 @@
                     </v-card-title>
                         
                     <v-card-text>
+                        <div v-for="tech in item.tech" class="tech-used">{{tech}}</div>
+                        <br/>
                         {{item.text}}
-                        <br/><br/><!-- todo: change span for tech-used... -->
-                        <span>Technologies used:</span>
-                        <span v-for="tech in item.tech" class="tech-used">{{tech}}</span>
                     </v-card-text>
 
                     <v-card-row actions>
@@ -54,9 +53,16 @@ export default {
 </script>
 
 <style scoped>
+.card__title{
+    padding-bottom:5px;
+}
+.card__text{
+    padding-top:0;
+}
 .tech-used{
-    border:1px solid #ccc;
-    padding:3px;
-    margin-right:5px;
+    border:1px solid #9ac;
+    padding:0 3px 0 3px;
+    margin:2px 4px 30px 0;
+    display: inline-block;
 }
 </style>
