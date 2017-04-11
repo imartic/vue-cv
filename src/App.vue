@@ -66,7 +66,9 @@
                 <br/>
               </v-col>
               <v-col xs12 sm12 md7 lg8>
-                <router-view></router-view>
+                <transition name="fade" mode="out-in">
+                  <router-view></router-view>
+                </transition>
               </v-col>
             </v-row>
           </v-container>
@@ -122,6 +124,15 @@ export default {
     top:19px;
     right:16px;
     color:#777;
+  }
+  /*******************/
+
+  /* router-link transition */
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
   /*******************/
 
