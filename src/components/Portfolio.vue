@@ -9,6 +9,9 @@
                         
                     <v-card-text>
                         {{item.text}}
+                        <br/><br/><!-- todo: change span for tech-used... -->
+                        <span>Technologies used:</span>
+                        <span v-for="tech in item.tech" class="tech-used">{{tech}}</span>
                     </v-card-text>
 
                     <v-card-row actions>
@@ -28,15 +31,17 @@ export default {
       title: 'Portfolio',
       portfolio:[
         {
-            title:'Project One', 
+            title:'Portfolio site', 
             thumbnail:'', 
-            text:'Portfolio project example',
+            text:'This portfolio site was created with Vue.js.',
+            tech:['Vue.js 2', 'Vuetify (Component framework)'],
             link:''
         },
         {
-            title:'Project Two', 
+            title:'MyBiz', 
             thumbnail:'', 
-            text:'Another Portfolio project example',
+            text:'A web application for creating and exporting business proposals.',
+            tech:['C#', 'JavaScript/jQuery', 'HTML', 'CSS', 'Material Design Lite'],
             link:''
         }
       ]
@@ -49,5 +54,9 @@ export default {
 </script>
 
 <style scoped>
-
+.tech-used{
+    border:1px solid #ccc;
+    padding:3px;
+    margin-right:5px;
+}
 </style>

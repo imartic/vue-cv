@@ -8,6 +8,7 @@
         <v-btn icon="icon" @click.native.stop="sidebar = !sidebar">
             <v-icon>close</v-icon>
           </v-btn>
+          <span class="white--text">MENU</span>
       </v-toolbar>
 
       <v-list>
@@ -108,7 +109,7 @@ export default {
     },
     downloadCV: function(){
       this.modal = false;
-      alert("CV's will be available shortly!");
+      alert("CVs will be included shortly!");
     }
   },
   components:{
