@@ -2,9 +2,13 @@
     <v-card>
         <v-card-title>
             {{title}}
+            <v-spacer></v-spacer>
+            <v-btn icon flat v-tooltip:bottom="{ html: sectionTooltip }" @click.native="section = !section">
+                <v-icon>{{sectionIcon}}</v-icon>
+            </v-btn>
         </v-card-title>
 
-        <v-card-text>
+        <v-card-text id="section-text-exp">
             <ul class="about-list">
                 <li class="about-list-item" v-for="(item, index) in work">
                     <v-row>
@@ -36,6 +40,9 @@ export default {
   data () {
     return {
       title: 'Experience',
+      section: true,
+      sectionIcon: 'expand_less',
+      sectionTooltip: 'Hide section',
       work:[
         {
             title:'Alarm automatika d.o.o.',
@@ -60,16 +67,24 @@ export default {
   },
   methods: {
 
+  },
+  watch: {
+    section: function() {
+        if(!this.section){
+            document.getElementById('section-text-exp').style.display = "none";
+            this.sectionIcon = 'expand_more';
+            this.sectionTooltip = 'Show section';
+        }
+        else{
+            document.getElementById('section-text-exp').style.display = "block";
+            this.sectionIcon = 'expand_less';
+            this.sectionTooltip = 'Hide section';
+        }
+    }
   }
 }
 </script>
 
-<style>
-    .about-list{list-style-type:none;padding:0;margin-top:7px}
-    .about-logo{padding:4px 10px 0 7px}
-    .about-header{margin-bottom:15px;padding-left:7px}
-    .divider{margin-top:28px;margin-bottom:28px}
-    .about-pos{font-size:20px;font-weight:400}
-    .about-title{font-size:15px;font-weight:500;color:#333;margin-right:10px}
-    .about-time{padding-top:2px;font-weight:400;color:#333}
+<style scoped>
+
 </style>

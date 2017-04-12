@@ -2,9 +2,13 @@
     <v-card>
         <v-card-title>
             {{title}}
+            <v-spacer></v-spacer>
+            <v-btn icon flat v-tooltip:bottom="{ html: sectionTooltip }" @click.native="section = !section">
+                <v-icon>{{sectionIcon}}</v-icon>
+            </v-btn>
         </v-card-title>
 
-        <v-card-text>
+        <v-card-text id="section-text-edu">
             <ul class="about-list">
                 <li class="about-list-item" v-for="(item, index) in education">
                     <v-row>
@@ -32,6 +36,9 @@ export default {
   data () {
     return {
       title: 'Education',
+      section: true,
+      sectionIcon: 'expand_less',
+      sectionTooltip: 'Hide section',
       education:[
         {
             title:'Polytechnic of Rijeka - Croatia',
@@ -54,6 +61,20 @@ export default {
   },
   methods: {
 
+  },
+  watch: {
+    section: function() {
+        if(!this.section){
+            document.getElementById('section-text-edu').style.display = "none";
+            this.sectionIcon = 'expand_more';
+            this.sectionTooltip = 'Show section';
+        }
+        else{
+            document.getElementById('section-text-edu').style.display = "block";
+            this.sectionIcon = 'expand_less';
+            this.sectionTooltip = 'Hide section';
+        }
+    }
   }
 }
 </script>

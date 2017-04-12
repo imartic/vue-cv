@@ -1,7 +1,7 @@
 <template>
   <v-app id="cv">
     <v-toolbar-side-icon class="toggle-btn" @click.native.stop="sidebar = !sidebar"/>
-    <div class="in-progress">still in progress...</div>
+    <div class="in-progress">Site still in progress...</div>
 
     <v-sidebar drawer v-model="sidebar">
       <v-toolbar style="background-color:#146">
