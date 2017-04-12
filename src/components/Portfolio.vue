@@ -22,7 +22,9 @@
                             <v-icon><i class="fa fa-github"></i></v-icon>
                         </v-btn>
                         <v-spacer></v-spacer>
-                        <v-btn flat class="prim-col">View project</v-btn>
+                        <!--<router-link v-if="project.link !== ''" :to="project.link">-->
+                            <v-btn flat class="prim-col">View project</v-btn>
+                        <!--</router-link>-->
                     </v-card-row>
                 </v-card>
             <!--</v-col>

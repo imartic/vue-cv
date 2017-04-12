@@ -31,7 +31,6 @@
 </template>
 
 <script>
-const logo = require('@/assets/logo.png');
 const aa_logo = require('@/assets/aa.jpg');
 const impuls_logo = require('@/assets/impuls.png');
 

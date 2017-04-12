@@ -45,7 +45,7 @@ export default {
             logo:'', 
             degree:'Bachelor of Engineering, Telematics',
             time:'Oct 2012 - Mar 2017',
-            text:'Bachelor degree in Telematics.' +
+            text:'Bachelor\'s degree in Telematics.' +
                 '<br/>University website: <a href="https://www.veleri.hr/">https://www.veleri.hr</a>'
         },
         {
