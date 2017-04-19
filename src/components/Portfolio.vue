@@ -56,11 +56,11 @@ export default {
             link:''
         },
         {
-            title:'Example Project', 
+            title:'MyBiz v2', 
             thumbnail:'', 
-            text:'Project example.',
-            tech:['Technologies used'],
-            github:'',
+            text:'Upgrade from Version 1. In early phases of development.',
+            tech:['Vue.js','Quasar Framework','...'],
+            github:'https://github.com/imartic/MyBiz-v2',
             link:''
         }
       ]

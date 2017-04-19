@@ -3,7 +3,7 @@
         <v-card-title>
             {{title}}
             <v-spacer></v-spacer>
-            <v-btn icon flat v-tooltip:bottom="{ html: sectionTooltip }" @click.native="section = !section">
+            <v-btn icon flat v-tooltip:left="{ html: sectionTooltip }" @click.native="section = !section">
                 <v-icon>{{sectionIcon}}</v-icon>
             </v-btn>
         </v-card-title>
@@ -45,7 +45,9 @@ export default {
             logo:'', 
             degree:'Bachelor of Engineering, Telematics',
             time:'Oct 2012 - Mar 2017',
-            text:'Bachelor\'s degree in Telematics.' +
+            text:'Bachelor\'s degree in Telematics.<br/>' +
+                'Software Development/Engineering (C++, Java, SQL), Automation, Telecommunications, ' +
+                'Electrical engineering, System design,...' +
                 '<br/>University website: <a href="https://www.veleri.hr/">https://www.veleri.hr</a>'
         },
         {
@@ -53,7 +55,8 @@ export default {
             logo:'', 
             degree:'Telematics',
             time:'Mar 2015 - Jul 2015',
-            text:'Exchange semester at TH Wildau.' +
+            text:'Exchange semester at TH Wildau.<br/>' +
+                'Software project (JavaFX) and German language.' +
                 '<br/>University website: <a href="http://www.th-wildau.de/">http://www.th-wildau.de</a>'
         }
       ]

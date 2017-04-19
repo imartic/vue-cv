@@ -3,7 +3,7 @@
         <v-card-title>
             {{title}}
             <v-spacer></v-spacer>
-            <v-btn icon flat v-tooltip:bottom="{ html: sectionTooltip }" @click.native="section = !section">
+            <v-btn icon flat v-tooltip:left="{ html: sectionTooltip }" @click.native="section = !section">
                 <v-icon>{{sectionIcon}}</v-icon>
             </v-btn>
         </v-card-title>
@@ -48,7 +48,10 @@ export default {
             logo:aa_logo, 
             pos:'Software Developer',
             time:'Nov 2016 - Present',
-            text:'Working as Software Developer in Research & Development department at Alarm automatika d.o.o.' +
+            text:'Working as Software Developer in Research & Development department at Alarm automatika d.o.o. ' +
+                'Worked on several different projects and the ones I worked most on are a self-ticketing cashier for parking lots and a web application ' +
+                'for event management (ticketing system) and supervision. For development I mainly used C#, JavaScript/jQuery, ' +
+                'HTML, CSS and Microsoft SQL Server.' +
                 '<br/>Company website: <a href="https://www.alarmautomatika.com/en">https://www.alarmautomatika.com</a>'
         },
         {
@@ -58,7 +61,7 @@ export default {
             time:'Nov 2015 - Jul 2016',
             text:'Worked as Software Developer at Impuls ing d.o.o. ' +
                 'Responsible for the development of a module for an existing desktop application. ' +
-                '' +
+                'Worked with C# and Microsoft SQL Server (Transact-SQL).' +
                 '<br/>Product website: <a href="http://www.integracert.com">http://www.integracert.com</a>'
         }
       ]
