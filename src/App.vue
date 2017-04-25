@@ -41,8 +41,8 @@
                 <v-modal v-model="modal" class="cv-modal">
 
                   <v-btn flat block slot="activator" class="download-btn ">
-                    <v-icon left>file_download</v-icon>
-                    Download CV
+                    <v-icon left>open_in_new</v-icon>
+                    View CV
                   </v-btn>
 
                   <v-card class="cv-modal-card">
@@ -50,14 +50,17 @@
                       <h2 class="title">Choose language of CV</h2>
                     </v-card-text>
                     <v-card-text>
-                      <v-radio v-for="item in cv_langs" 
+                      <v-radio v-for="item in cv_langs"
+                        :disabled="item.value != 'en'"
                         v-model="cv_lang" 
                         :label="item.text" 
                         :value="item.value" 
                         class="radio-cv-lang"/>
                     </v-card-text>
                     <v-card-row actions>
-                      <v-btn flat block @click.native="downloadCV()" class="prim-col">Download</v-btn>
+                        <v-btn flat block
+                          @click.native="viewCV()"
+                          class="prim-col">View</v-btn>
                     </v-card-row>
                   </v-card>
 
@@ -81,6 +84,7 @@
 </template>
 
 <script>
+var cv_en = require("file-loader?name=[name].[ext]!./files/IvanMarticCV_en.pdf");
 import Profile from '@/components/Profile'
 
 export default {
@@ -100,16 +104,17 @@ export default {
         {text:'German', value:'de'},
         {text:'Croatian', value:'hr'},
       ],
-      cv_lang:'en'
+      cv_lang: 'en'
     }
   },
   methods: {
     getCurrentYear: function(){
       return new Date().getFullYear();
     },
-    downloadCV: function(){
+    viewCV: function(){
+      window.open(cv_en)
       this.modal = false;
-      alert("CVs will be included shortly!");
+      //alert("CVs will be included shortly!");
     }
   },
   components:{
